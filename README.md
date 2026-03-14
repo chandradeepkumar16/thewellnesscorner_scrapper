@@ -44,6 +44,14 @@ taskkill /IM chrome.exe /F
 "C:`\Program `{=tex}Files`\Google`{=tex}`\Chrome`{=tex}`\Application`{=tex}`\chrome`{=tex}.exe"
 --remote-debugging-port=9222 --user-data-dir="\$env:TEMP`\wc`{=tex}-cdp"
 
+It will look like this :
+
+taskkill /IM chrome.exe /F
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="$env:TEMP\wc-cdp"
+cd "e:\Codes-Projects\wellnesscorner scrapper"
+python main.py --live-url https://www.thewellnesscorner.com/ --cart-only --attach-cdp-url http://127.0.0.1:9222 --save-captured-json captured.json --output skuids.txt
+
+
 Explanation:
 
 -   --remote-debugging-port=9222 : Opens Chrome DevTools debugging port
